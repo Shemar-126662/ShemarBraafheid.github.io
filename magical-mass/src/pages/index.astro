@@ -2,24 +2,72 @@
 import '../styles/global.css';
 
 const skills = [
-	{ name: 'PHP', level: 80 },
-	{ name: 'C#', level: 70 },
-	{ name: 'HTML/CSS', level: 85 },
-	{ name: 'WordPress', level: 75 },
+	{ name: 'PHP', level: 60 },
+	{ name: 'Python', level: 70 },
+	{ name: 'C#', level: 50 },
+	{ name: 'HTML/CSS', level: 100 },
+	{ name: 'WordPress', level: 60 },
 	{ name: 'JavaScript', level: 70 },
+	{ name: 'React', level: 80 },
+	{ name: 'TypeScript', level: 70 },
 ];
 
-const languages = ['Nederlands', 'Engels', 'Duits'];
+const languages = ['Nederlands', 'Engels'];
+
+const traits = [
+	'Enthousiast',
+	'Stressbestendig',
+	'Zelfstandig',
+	'Flexibel',
+	'Verantwoordelijkheidsgevoel',
+	'Communicatief',
+	'Klantgericht',
+	'Sociaal',
+];
 
 const experience = [
 	{
-		role: 'Bezorger',
-		company: 'DHL, Rotterdam',
-		period: 'november 2021 — heden',
+		role: 'Batterijwisselaar',
+		company: 'Check',
+		period: 'sinds 2026 - heden',
 		points: [
-			'Ik bezorg dagelijks tientallen pakketten in Rotterdam binnen een strakke tijdsplanning.',
-			'Ik blijf stressbestendig tijdens piekmomenten zoals kerst en pakjesavond, wanneer het volume flink oploopt.',
-			'Ik plan mijn route zelfstandig om zo efficiënt mogelijk te bezorgen.',
+			'Ik wissel dagelijks batterijen van deelvoertuigen door de stad, zodat ze altijd inzetbaar blijven.',
+			'Ik werk zelfstandig en plan mijn eigen route, en combineer dit met mijn opleiding.',
+		],
+	},
+	{
+		role: 'Full Stack Developer (stage)',
+		company: 'Axoft IT & Telecom',
+		period: 'september 2024 — mei 2025',
+		points: [
+			'Ik heb ervaren hoe het bedrijfsleven écht in elkaar zit, en hoe je samenwerkt met andere programmeurs en collega’s van andere afdelingen.',
+			'Ik heb mijn kennis uitgebreid en geleerd om veilig en gestructureerd te coderen.',
+		],
+	},
+	{
+		role: 'Pakkettenbezorger',
+		company: 'DHL, Rotterdam',
+		period: 'juli 2023 — juli 2024',
+		points: [
+			'Ik ging verantwoordelijk om met pakketten en zorgde voor een veilige en tijdige bezorging.',
+			'Ik sorteerde pakketten vooraf op bezorgvolgorde, waardoor ik efficiënter kon bezorgen.',
+		],
+	},
+	{
+		role: 'Barmedewerker',
+		company: 'Maassilo, Rotterdam',
+		period: 'februari 2022 — mei 2023',
+		points: [
+			'Ik leerde omgaan met lastige situaties en drukte achter de bar.',
+			'Ik bleef professioneel, ook wanneer klanten zich anders gingen gedragen.',
+		],
+	},
+	{
+		role: 'Bezorger',
+		company: 'Thuisbezorgd, Rotterdam',
+		period: 'november 2021 — oktober 2022',
+		points: [
+			'Ik werkte zelfstandig en was verantwoordelijk voor het ophalen en bezorgen van bestellingen.',
 		],
 	},
 	{
@@ -27,18 +75,23 @@ const experience = [
 		company: 'Dirk van den Broek, Rotterdam',
 		period: 'februari 2020 — november 2021',
 		points: [
-			'Ik vulde dagelijks schappen aan en hield voorraad bij, zowel zelfstandig als in teamverband.',
-			'Ik werkte klantgericht en loste vragen van klanten op de winkelvloer op.',
-			'Ik werkte samen met teamleiders en collega’s om winkeldoelstellingen te halen.',
+			'Ik leerde efficiënt en klantgericht werken tijdens het vullen van de schappen.',
+			'Ik werkte goed samen met collega’s en leidinggevenden om teamdoelen te behalen.',
 		],
 	},
 ];
 
 const education = [
 	{
+		role: 'Software Development (HBO AD)',
+		company: 'Hogeschool Rotterdam',
+		period: 'sinds januari 2026 - heden',
+		points: ['Eerstejaars, met als doel zoveel mogelijk softwarevaardigheden op te doen voor mijn beroep.'],
+	},
+	{
 		role: 'Software Development',
-		company: 'Grafisch Lyceum Rotterdam',
-		period: 'september 2021 — heden',
+		company: 'Grafisch Lyceum Rotterdam (MBO)',
+		period: 'september 2021 — 2025',
 		points: ['MBO niveau 4, met focus op webontwikkeling en programmeren.'],
 	},
 	{
@@ -61,7 +114,7 @@ const education = [
 			name="description"
 			content="Portfolio van Shemar Braafheid, software developer in opleiding uit Rotterdam. PHP, C#, JavaScript, HTML/CSS en WordPress."
 		/>
-		<title>Shemar Braafheid — Software Developer</title>
+		<title>Shemar Braafheid Software Developer</title>
 	</head>
 	<body>
 		<canvas id="bg-canvas" aria-hidden="true"></canvas>
@@ -78,12 +131,12 @@ const education = [
 
 		<main>
 			<section id="hero" class="hero">
-				<p class="wave">👋</p>
+				<img class="avatar" src="/shemar.jpeg" alt="Foto van Shemar Braafheid" width="240" height="240" />
 				<h1>Hoi, ik ben Shemar</h1>
 				<p class="role">Software Developer in opleiding &mdash; Rotterdam</p>
 				<p class="intro">
-					Van vulploeg en bezorgroutes naar versiebeheer en code &mdash; op weg naar een carri&egrave;re
-					als developer.
+					Brede werkervaring in klantcontact en teamwork, gecombineerd met een groeiende toolkit in PHP,
+					C#, JavaScript en React &mdash; op weg naar een carri&egrave;re als developer.
 				</p>
 				<div class="buttons">
 					<a class="btn btn-primary" href="#contact">Neem contact op</a>
@@ -94,18 +147,22 @@ const education = [
 			<section id="about" class="section">
 				<h2>Over mij</h2>
 				<p>
-					Ik ben Shemar, 19 jaar en woon met mijn ouders, broertje en zusje in Rotterdam. Ik volg de
-					opleiding <strong>Software Development</strong> (MBO niveau 4) aan het Grafisch Lyceum Rotterdam.
+					Ik ben Shemar, 22 jaar. Ik ben geboren in Nederland en woon al mijn hele leven in Rotterdam-West,
+					samen met mijn ouders, broertje en zusje. Ik volg de opleiding
+					Software Development (HBO AD) aan Hogeschool Rotterdam, waar ik nu in mijn eerste
+					jaar zit.
 				</p>
 				<p>
-					Naast school werk ik als bezorger bij DHL. Daar heb ik geleerd om onder druk goed te presteren,
-					mijn tijd slim in te delen en klantgericht te werken &mdash; vaardigheden die ik net zo goed
-					gebruik als ik aan een project werk.
+					Naast school werk ik als Batterijwisselaar bij Check. Daarvoor heb ik onder andere bij DHL,
+					Maassilo en Thuisbezorgd gewerkt, waar ik heb geleerd om verantwoordelijk, klantgericht en
+					stressbestendig te werken.
 				</p>
 				<p>
-					Buiten school en werk voetbal ik, game ik, lees ik en luister ik veel muziek. Mijn ambitie is om
-					een sterke software developer te worden, en te blijven leren van iedereen om me heen in de
-					computerwereld.
+					In mijn vrije tijd voetbal ik, spreek ik graag met vrienden af, luister ik muziek, ga ik naar de
+					sportschool en kijk ik soms een anime of serie. Mijn doel is om zoveel mogelijk kennis en
+					softwarevaardigheden op te doen voor mijn toekomstige beroep &mdash; daarom heb ik voor deze
+					opleiding gekozen, en het liefst ga ik na mijn studie direct aan de slag zodra de kans zich
+					voordoet.
 				</p>
 			</section>
 
@@ -128,6 +185,13 @@ const education = [
 				<ul class="tags">
 					{languages.map((lang) => (
 						<li class="tag">{lang}</li>
+					))}
+				</ul>
+
+				<h3>Eigenschappen</h3>
+				<ul class="tags">
+					{traits.map((trait) => (
+						<li class="tag">{trait}</li>
 					))}
 				</ul>
 			</section>
@@ -194,7 +258,7 @@ const education = [
 					</li>
 					<li>
 						<span class="icon">📍</span>
-						<span>Rotterdam, Nederland</span>
+						<span>Rotterdam-West, Nederland</span>
 					</li>
 				</ul>
 			</section>
