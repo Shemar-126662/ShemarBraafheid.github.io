@@ -294,6 +294,11 @@ main {
 	flex-wrap: wrap;
 }
 
+.icon-svg {
+	color: var(--text-dim);
+	flex-shrink: 0;
+}
+
 .contact-list a {
 	color: var(--accent);
 	text-decoration: none;
