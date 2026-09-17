@@ -1,17 +1,211 @@
 ---
+import '../styles/global.css';
 
+const skills = [
+	{ name: 'PHP', level: 80 },
+	{ name: 'C#', level: 70 },
+	{ name: 'HTML/CSS', level: 85 },
+	{ name: 'WordPress', level: 75 },
+	{ name: 'JavaScript', level: 70 },
+];
+
+const languages = ['Nederlands', 'Engels', 'Duits'];
+
+const experience = [
+	{
+		role: 'Bezorger',
+		company: 'DHL, Rotterdam',
+		period: 'november 2021 — heden',
+		points: [
+			'Ik bezorg dagelijks tientallen pakketten in Rotterdam binnen een strakke tijdsplanning.',
+			'Ik blijf stressbestendig tijdens piekmomenten zoals kerst en pakjesavond, wanneer het volume flink oploopt.',
+			'Ik plan mijn route zelfstandig om zo efficiënt mogelijk te bezorgen.',
+		],
+	},
+	{
+		role: 'Vulploegmedewerker',
+		company: 'Dirk van den Broek, Rotterdam',
+		period: 'februari 2020 — november 2021',
+		points: [
+			'Ik vulde dagelijks schappen aan en hield voorraad bij, zowel zelfstandig als in teamverband.',
+			'Ik werkte klantgericht en loste vragen van klanten op de winkelvloer op.',
+			'Ik werkte samen met teamleiders en collega’s om winkeldoelstellingen te halen.',
+		],
+	},
+];
+
+const education = [
+	{
+		role: 'Software Development',
+		company: 'Grafisch Lyceum Rotterdam',
+		period: 'september 2021 — heden',
+		points: ['MBO niveau 4, met focus op webontwikkeling en programmeren.'],
+	},
+	{
+		role: 'Mavo diploma',
+		company: 'Mavo Centraal, Rotterdam',
+		period: 'september 2019 — juni 2021',
+		points: ['Afgerond met mavo-diploma.'],
+	},
+];
 ---
 
-<html lang="en">
+<html lang="nl">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta
+			name="description"
+			content="Portfolio van Shemar Braafheid, software developer in opleiding uit Rotterdam. PHP, C#, JavaScript, HTML/CSS en WordPress."
+		/>
+		<title>Shemar Braafheid — Software Developer</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+		<header class="navbar">
+			<a href="#hero" class="logo">Shemar<span>.</span></a>
+			<nav>
+				<a href="#about">Over mij</a>
+				<a href="#skills">Skills</a>
+				<a href="#experience">Ervaring</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
+
+		<main>
+			<section id="hero" class="hero">
+				<p class="wave">👋</p>
+				<h1>Hoi, ik ben Shemar</h1>
+				<p class="role">Software Developer in opleiding &mdash; Rotterdam</p>
+				<p class="intro">
+					Van vulploeg en bezorgroutes naar versiebeheer en code &mdash; op weg naar een carri&egrave;re
+					als developer.
+				</p>
+				<div class="buttons">
+					<a class="btn btn-primary" href="#contact">Neem contact op</a>
+					<a class="btn" href="#skills">Bekijk mijn skills</a>
+				</div>
+			</section>
+
+			<section id="about" class="section">
+				<h2>Over mij</h2>
+				<p>
+					Ik ben Shemar, 19 jaar en woon met mijn ouders, broertje en zusje in Rotterdam. Ik volg de
+					opleiding <strong>Software Development</strong> (MBO niveau 4) aan het Grafisch Lyceum Rotterdam.
+				</p>
+				<p>
+					Naast school werk ik als bezorger bij DHL. Daar heb ik geleerd om onder druk goed te presteren,
+					mijn tijd slim in te delen en klantgericht te werken &mdash; vaardigheden die ik net zo goed
+					gebruik als ik aan een project werk.
+				</p>
+				<p>
+					Buiten school en werk voetbal ik, game ik, lees ik en luister ik veel muziek. Mijn ambitie is om
+					een sterke software developer te worden, en te blijven leren van iedereen om me heen in de
+					computerwereld.
+				</p>
+			</section>
+
+			<section id="skills" class="section">
+				<h2>Skills</h2>
+				<div class="skills-grid">
+					{
+						skills.map((skill) => (
+							<div class="skill-card">
+								<p class="skill-name">{skill.name}</p>
+								<div class="bar">
+									<div class="bar-fill" style={`width:${skill.level}%`} />
+								</div>
+							</div>
+						))
+					}
+				</div>
+
+				<h3>Talen</h3>
+				<ul class="tags">
+					{languages.map((lang) => (
+						<li class="tag">{lang}</li>
+					))}
+				</ul>
+			</section>
+
+			<section id="experience" class="section">
+				<h2>Ervaring</h2>
+
+				<h3>Werkervaring</h3>
+				<div class="cards">
+					{
+						experience.map((item) => (
+							<div class="card">
+								<div class="card-head">
+									<h4>
+										{item.role} &mdash; {item.company}
+									</h4>
+									<span class="period">{item.period}</span>
+								</div>
+								<ul>
+									{item.points.map((point) => (
+										<li>{point}</li>
+									))}
+								</ul>
+							</div>
+						))
+					}
+				</div>
+
+				<h3>Opleiding</h3>
+				<div class="cards">
+					{
+						education.map((item) => (
+							<div class="card">
+								<div class="card-head">
+									<h4>
+										{item.role} &mdash; {item.company}
+									</h4>
+									<span class="period">{item.period}</span>
+								</div>
+								<ul>
+									{item.points.map((point) => (
+										<li>{point}</li>
+									))}
+								</ul>
+							</div>
+						))
+					}
+				</div>
+			</section>
+
+			<section id="contact" class="section">
+				<h2>Contact</h2>
+				<p>Altijd open voor een stage, bijbaan of gewoon een goed gesprek over code.</p>
+				<ul class="contact-list">
+					<li>
+						<span class="icon">📧</span>
+						<a href="mailto:shemarbraafheid2017@gmail.com">shemarbraafheid2017@gmail.com</a>
+					</li>
+					<li>
+						<span class="icon">💻</span>
+						<a href="https://github.com/Shemar-126662" target="_blank" rel="noreferrer noopener">
+							github.com/Shemar-126662
+						</a>
+					</li>
+					<li>
+						<span class="icon">📍</span>
+						<span>Rotterdam, Nederland</span>
+					</li>
+				</ul>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; {new Date().getFullYear()} Shemar Braafheid. Gebouwd met Astro.</p>
+		</footer>
+
+		<script>
+			import '../scripts/bg-canvas.js';
+		</script>
 	</body>
 </html>
