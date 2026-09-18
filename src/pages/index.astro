@@ -106,8 +106,8 @@ const education = [
 <html lang="nl">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+		<link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<meta
@@ -131,7 +131,13 @@ const education = [
 
 		<main>
 			<section id="hero" class="hero">
-				<img class="avatar" src="/shemar.jpeg" alt="Foto van Shemar Braafheid" width="240" height="240" />
+				<img
+					class="avatar"
+					src={`${import.meta.env.BASE_URL}shemar.jpeg`}
+					alt="Foto van Shemar Braafheid"
+					width="240"
+					height="240"
+				/>
 				<h1>Hoi, ik ben Shemar</h1>
 				<p class="role">Software Developer in opleiding &mdash; Rotterdam</p>
 				<p class="intro">
